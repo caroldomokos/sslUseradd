@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use warnings;
-use 5.18.0;
+use strict;
 
 # function definitions  
 # ---------------------------------------------------------------------------
@@ -14,16 +14,10 @@ close $handle;
 return @lines
 }
 
-sub take_first # take the first key in the key_db
-{
-	my $word = shift;
-        return ($word);
-}
-
 sub in_useQ 
 {
 	my $key_proposed = shift;
-	my @allocated = read_to_array ("alloc_db");#/# can move to var
+	my @allocated = shift;
 	my $in_use = 0;
 	my $key;
 	foreach $key (@allocated) 
@@ -40,13 +34,14 @@ sub in_useQ
 sub run # main function*
 #***********************
 {
-say "Hello World";
+print "Hello World \n";
 my @key_proposed = read_to_array ("key_db"); #/# can move to var
+my @allocated = read_to_array ("alloc_db");
 my $count = 1;
 while ($count)
 {
-	my $keyProposed = take_first (@key_proposed);
-	if (in_useQ ($keyProposed))
+	my $keyProposed = shift @key_proposed;
+	if (in_useQ ($keyProposed, @allocated))
 	{
 		print ("Removing key \n");
 	}
