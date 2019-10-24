@@ -31,7 +31,7 @@ sub in_useQ
 		if ($key = $key_proposed)
 		{
 		my $in_use = 1;
-		printf ("Key is already in use!");
+		print ("Key is already in use! \n");
 		break;
 		}
 	}
@@ -43,7 +43,20 @@ sub run # main function*
 {
 say "Hello World";
 my @key_proposed = read_to_array ("key_db"); #/# can move to var
-my $keyProposed = take_first (@key_proposed);
+my $count = 1;
+while ($count)
+{
+	my $keyProposed = take_first (@key_proposed);
+	if (in_useQ ($keyProposed))
+	{
+		print ("Removing key \n");
+	}
+	else 
+	{
+		print ("Key is available \n");
+		$count =0;
+		print (" the key ongoing is $keyProposed \n");
+	}
 
 }
 # end function definitions 
