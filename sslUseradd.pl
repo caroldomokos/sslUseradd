@@ -28,11 +28,10 @@ sub in_useQ
 	my $key;
 	foreach $key (@allocated) 
 	{
-		if ($key = $key_proposed)
+		if ($key eq $key_proposed)
 		{
 		my $in_use = 1;
 		print ("Key is already in use! \n");
-		break;
 		}
 	}
 	return ($in_use);
