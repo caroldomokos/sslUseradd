@@ -57,7 +57,7 @@ while ($count)
 		$count =0;
 		print (" the key ongoing is $keyProposed \n");
 	}
-
+}
 }
 # end function definitions 
 # ---------------------------------------------------------------------------
