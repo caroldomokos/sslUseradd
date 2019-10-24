@@ -25,6 +25,7 @@ sub in_useQ
 	my $key_proposed = shift;
 	my @allocated = read_to_array ("alloc_db");#/# can move to var
 	my $in_use = 0;
+	my $key;
 	foreach $key (@allocated) 
 	{
 		if ($key = $key_proposed)
