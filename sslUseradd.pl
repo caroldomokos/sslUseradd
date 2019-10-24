@@ -20,7 +20,7 @@ sub take_first # take the first key in the key_db
         return ($word);
 }
 
-sub in_use? 
+sub in_useQ 
 {
 	my $key_proposed = shift;
 	my @allocated = read_to_array ("alloc_db");#/# can move to var
