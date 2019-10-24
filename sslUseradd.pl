@@ -3,7 +3,7 @@
 use warnings;
 use 5.18.0;
 
-#### function definitions  ##################################################
+# function definitions  
 # ---------------------------------------------------------------------------
 sub read_to_array
 {
@@ -17,7 +17,7 @@ return @lines
 sub take_first # take the first key in the key_db
 {
 	my $word = shift;
-        say $word;
+        return ($word);
 }
 
 #***********************
@@ -25,11 +25,10 @@ sub run # main function*
 #***********************
 {
 say "Hello World";
-#my @array = ("first", "second", "third");
-my @array = read_to_array ("key_db");
+my @array = read_to_array ("key_db"); #/# can move to var
 take_first (@array);
 }
-#### end function definitions  ##############################################
+# end function definitions 
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
